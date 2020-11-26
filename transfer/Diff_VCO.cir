@@ -1,0 +1,80 @@
+.title Symmetrical Load VCO schematic
+
+* MOSFET
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/models/corners/tt/nonfet.spice"
+* Mismatch parameters
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice"
+* Resistor/Capacitor
+.include "/home/merlproj/custom_tools/sky130_fd_pr/models/r+c/res_typical__cap_typical.spice"
+.include "/home/merlproj/custom_tools/sky130_fd_pr/models/r+c/res_typical__cap_typical__lin.spice"
+* Special cells
+.include "/home/merlproj/custom_tools/sky130_fd_pr/models/corners/tt/specialized_cells.spice"
+* All models
+.include "/home/merlproj/custom_tools/sky130_fd_pr/models/all.spice"
+* Corner
+.include "/home/merlproj/custom_tools/sky130_fd_pr/models/corners/tt/rf.spice"
+
+.include "DelayCell.cir"
+.include "Selfbias.cir"
+
+X1 vdd vss vctrl inp inn otp1 otn1 vbn DelayCell
+X2 vdd vss vctrl otn1 otp1 otp2 otn2 vbn DelayCell
+X3 vdd vss vctrl otn2 otp2 otp3 otn3 vbn DelayCell
+X4 vdd vss vctrl otn3 otp3 inp inn vbn DelayCell
+X5 vdd vss vbn Vinit vctrl BiasGen
+
+C1 inp 0 1p
+C2 inn 0 1p
+
+V1 vdd 0 dc 1.8
+V2 vss 0 dc 0
+V3 Vctrl 0 dc 1.1
+*V4 vbn 0 dc 0.7
+I1 Vinit 0 0
+*VP1 INP 0 PULSE(0 1.8 1n 10p 10p 0.33n 0.66n)
+*VN1 INN 0 PULSE(1.8 0 1n 10p 10p 0.33n 0.66n)
+
+.param TEMP=27
+	.control
+
+	*DC v3 0 1.8 10m ;V4 0 1.8 0.9
+	*plot v(inp) v(inn)
+	TRAN 1p 500n 0
+	plot v(inp) v(inn) v(vbn) v(vctrl) v(Vinit)
+	*plot i(vdmy1) i(vdmy2) i(vtt)
+	meas tran ymax max v(inp)
+	meas tran ymin min v(inp)
+	let val1=(ymax-ymin)/2
+	let h1=val1+ymin
+	print val1 h1
+	meas tran T3 when V(inp)=h1 rise=5
+	meas tran T4 when V(inp)=h1 rise=6
+	let freq2=1/(t4-t3)
+	print freq2
+	let inv_td2=1/(5*2*freq2)
+print inv_td2
+	
+	.endc 
+.end

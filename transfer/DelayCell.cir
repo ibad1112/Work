@@ -1,0 +1,46 @@
+*.title Delay Cell schematic
+
+.subckt DelayCell vdd vss vctrl inp inn otp otn vbn
+*Two parallel PMOS
+XPl1a D1l Vctrl vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPl1b D1l Vctrl vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPl1c D1l Vctrl vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPl1d D1l Vctrl vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPl2a D2l D2l vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPl2b D2l D2l vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPl2c D2l D2l vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPl2d D2l D2l vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+
+VDmyl1 D1l otn dc 0
+VDmyl2 D2l otn dc 0
+
+XPr1a D1r Vctrl vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPr1b D1r Vctrl vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPr1c D1r Vctrl vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPr1d D1r Vctrl vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPr2a D2r D2r vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPr2b D2r D2r vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPr2c D2r D2r vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XPr2d D2r D2r vdd vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+
+VDmyr1 D1r otp dc 0
+VDmyr2 D2r otp dc 0
+
+*Differential NMOS Pair with NMOS tail transistor;
+XNN1 otn inp itail itail sky130_fd_pr__nfet_01v8_lvt w=10 l=0.15
+XNN2 otp inn itail itail sky130_fd_pr__nfet_01v8_lvt w=10 l=0.15
+VDmya Itail Itail_a dc 0
+XN1 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN2 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN3 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN4 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN5 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN6 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN7 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN8 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN9 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN10 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+XN11 Itail_a vbn 0 0 sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+
+.ends
+
