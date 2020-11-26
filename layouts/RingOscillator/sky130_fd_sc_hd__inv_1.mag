@@ -1,9 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1603542572
-<< checkpaint >>
-rect -1298 -1308 1574 1852
+timestamp 1606359646
 << nwell >>
 rect -38 261 314 582
 << pwell >>
@@ -152,7 +150,7 @@ rlabel comment s 0 0 0 0 4 inv_1
 << properties >>
 string FIXED_BBOX 0 0 276 544
 string GDS_FILE /home/merlproj/backend-tools/pdks/open_pdks_updated/sky130/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
-string GDS_END 2111566
 string GDS_START 2108072
+string GDS_END 2111566
 string path 0.000 0.000 6.900 0.000 
 << end >>
