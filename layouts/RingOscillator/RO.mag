@@ -1,0 +1,71 @@
+magic
+tech sky130A
+timestamp 1605301296
+<< locali >>
+rect 1587 331 1613 332
+rect -51 309 1613 331
+rect -51 307 1566 309
+rect -50 183 -26 307
+rect -50 166 14 183
+rect 220 108 306 130
+rect 370 109 477 130
+rect 546 108 654 130
+rect 723 108 831 130
+rect 898 108 1006 130
+rect 1074 108 1182 130
+rect 1250 108 1358 130
+rect 1587 129 1613 309
+rect 1426 110 1613 129
+rect 1426 108 1590 110
+<< viali >>
+rect 101 109 121 127
+<< metal1 >>
+rect 2 249 815 297
+rect 817 248 1559 296
+rect -56 127 128 130
+rect -56 109 101 127
+rect 121 109 128 127
+rect -56 106 128 109
+rect 1 -24 1559 24
+use sky130_fd_sc_hd__tapvpwrvgnd_1  sky130_fd_sc_hd__tapvpwrvgnd_1_0
+timestamp 1605299710
+transform 1 0 1500 0 1 0
+box -19 -24 65 296
+use sky130_fd_sc_hd__inv_1  sky130_fd_sc_hd__inv_1_6
+timestamp 1605299710
+transform 1 0 1324 0 1 0
+box -19 -24 157 296
+use sky130_fd_sc_hd__inv_1  sky130_fd_sc_hd__inv_1_5
+timestamp 1605299710
+transform 1 0 1148 0 1 0
+box -19 -24 157 296
+use sky130_fd_sc_hd__inv_1  sky130_fd_sc_hd__inv_1_4
+timestamp 1605299710
+transform 1 0 972 0 1 0
+box -19 -24 157 296
+use sky130_fd_sc_hd__inv_1  sky130_fd_sc_hd__inv_1_3
+timestamp 1605299710
+transform 1 0 796 0 1 0
+box -19 -24 157 296
+use sky130_fd_sc_hd__inv_1  sky130_fd_sc_hd__inv_1_2
+timestamp 1605299710
+transform 1 0 620 0 1 0
+box -19 -24 157 296
+use sky130_fd_sc_hd__and2_0  sky130_fd_sc_hd__and2_0_0
+timestamp 1605299710
+transform 1 0 0 0 1 0
+box -19 -24 249 296
+use sky130_fd_sc_hd__inv_1  sky130_fd_sc_hd__inv_1_1
+timestamp 1605299710
+transform 1 0 444 0 1 0
+box -19 -24 157 296
+use sky130_fd_sc_hd__inv_1  sky130_fd_sc_hd__inv_1_0
+timestamp 1605299710
+transform 1 0 268 0 1 0
+box -19 -24 157 296
+<< labels >>
+rlabel locali -47 170 -44 172 1 out
+rlabel metal1 -48 113 -45 115 1 en
+rlabel metal1 240 268 243 270 1 Vdd
+rlabel metal1 240 -2 243 0 1 Gnd
+<< end >>
