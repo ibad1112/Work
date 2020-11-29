@@ -478,26 +478,26 @@ rect 5116 1840 5276 2474
 rect 5116 1748 5150 1840
 rect 5252 1748 5276 1840
 rect 5116 1724 5276 1748
-use sky130_fd_pr__nfet_01v8_lvt_69NU8X  sky130_fd_pr__nfet_01v8_lvt_69NU8X_0
-timestamp 1606076054
-transform 0 1 2704 -1 0 -1228
-box -396 -1470 396 1470
-use sky130_fd_pr__nfet_01v8_lvt_D42ZUM  sky130_fd_pr__nfet_01v8_lvt_D42ZUM_1
-timestamp 1606076054
-transform 0 1 2422 -1 0 -429
-box -211 -252 211 252
-use sky130_fd_pr__nfet_01v8_lvt_D42ZUM  sky130_fd_pr__nfet_01v8_lvt_D42ZUM_0
-timestamp 1606076054
-transform 0 1 2924 -1 0 -431
-box -211 -252 211 252
-use sky130_fd_pr__pfet_01v8_NC6LGM  sky130_fd_pr__pfet_01v8_NC6LGM_1
-timestamp 1606057846
-transform 1 0 4000 0 1 1171
-box -1352 -1219 1352 1219
 use sky130_fd_pr__pfet_01v8_NC6LGM  sky130_fd_pr__pfet_01v8_NC6LGM_0
 timestamp 1606057846
 transform 1 0 1299 0 1 1166
 box -1352 -1219 1352 1219
+use sky130_fd_pr__pfet_01v8_NC6LGM  sky130_fd_pr__pfet_01v8_NC6LGM_1
+timestamp 1606057846
+transform 1 0 4000 0 1 1171
+box -1352 -1219 1352 1219
+use sky130_fd_pr__nfet_01v8_lvt_D42ZUM  sky130_fd_pr__nfet_01v8_lvt_D42ZUM_0
+timestamp 1606076054
+transform 0 1 2924 -1 0 -431
+box -211 -252 211 252
+use sky130_fd_pr__nfet_01v8_lvt_D42ZUM  sky130_fd_pr__nfet_01v8_lvt_D42ZUM_1
+timestamp 1606076054
+transform 0 1 2422 -1 0 -429
+box -211 -252 211 252
+use sky130_fd_pr__nfet_01v8_lvt_69NU8X  sky130_fd_pr__nfet_01v8_lvt_69NU8X_0
+timestamp 1606076054
+transform 0 1 2704 -1 0 -1228
+box -396 -1470 396 1470
 << labels >>
 rlabel metal1 2356 2494 2412 2550 1 Vdd
 port 1 n

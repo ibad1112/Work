@@ -1,0 +1,31 @@
+.title Bias Generator schematic
+
+.subckt BiasGen Vdd Vss vbn Vinit Vcntrl
+*Bias Init
+XMP1z1 Inv1IN Vss Vdd Vdd sky130_fd_pr__pfet_01v8_lvt w=0.42 l=2 ; Better to control this node externally, remove this Tx
+XMN1z1 Inv1IN vbn Vss Vss sky130_fd_pr__nfet_01v8_lvt w=0.42 l=0.15
+XMP2z1 Inv2IN Inv1IN Vdd Vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
+XMN2z1 Inv2IN Inv1IN Vss Vss sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+XMP3z1 Vinit Inv2IN Vdd Vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
+XMN3z1 Vinit Inv2IN Vss Vss sky130_fd_pr__nfet_01v8 w=0.65 l=0.15
+
+*Amplifier Bias
+XMP1a1 AmpBias1 AmpBias1 Vdd Vdd sky130_fd_pr__pfet_01v8_lvt w=7.5 l=5
+XMN1a1 AmpBias1 Vdd AmpBias2 AmpBias2 sky130_fd_pr__nfet_01v8 w=0.420 l=0.150
+XMN2a1 AmpBias2 Vinit Vss Vss sky130_fd_pr__nfet_01v8 w=0.420 l=0.150
+XMN3a1 AmpBias2 vbn Vss Vss sky130_fd_pr__nfet_01v8 w=0.420 l=0.150
+
+*Differential Amplifier
+XMP1b1 DiffAmp1 AmpBias1 Vdd Vdd sky130_fd_pr__pfet_01v8_lvt w=7.5 l=5 m=1 
+XMP2b1 vbn Vcntrl DiffAmp1 DiffAmp1 sky130_fd_pr__pfet_01v8_lvt w=1 l=0.35
+XMP3b1 Active DiffAmpPos DiffAmp1 DiffAmp1 sky130_fd_pr__pfet_01v8_lvt w=1 l=0.35
+XMN1b1 vbn Active Vss Vss sky130_fd_pr__nfet_01v8 w=5 l=0.5 m=2
+XMN2b1 Active Active Vss Vss sky130_fd_pr__nfet_01v8 w=5 l=0.5 m=2
+
+*Half-Buffer Replica
+XMP1c1 DiffAmpPos Vcntrl Vdd Vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XMP2c1 DiffAmpPos DiffAmpPos Vdd Vdd sky130_fd_pr__pfet_01v8_lvt w=10 l=2
+XMN1c1 DiffAmpPos Vdd HalfBuff2 HalfBuff2 sky130_fd_pr__nfet_01v8_lvt w=10 l=0.15
+XMN2c1 HalfBuff2 vbn Vss Vss sky130_fd_pr__nfet_01v8_lvt w=12 l=2
+
+.ends

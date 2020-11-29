@@ -244,30 +244,30 @@ rect 3118 -1468 3238 -1434
 rect 1556 -1480 3238 -1468
 rect 222 -1582 3238 -1480
 rect 1660 -1584 3106 -1582
-use sky130_fd_pr__res_xhigh_po_0p35_RRCNTY  sky130_fd_pr__res_xhigh_po_0p35_RRCNTY_0
-timestamp 1606013492
-transform 1 0 625 0 1 855
-box -678 -908 678 908
-use sky130_fd_pr__res_xhigh_po_0p35_RRCNTY  sky130_fd_pr__res_xhigh_po_0p35_RRCNTY_1
-timestamp 1606013492
-transform 1 0 2828 0 1 850
-box -678 -908 678 908
-use sky130_fd_pr__nfet_01v8_lvt_PZT9H9  sky130_fd_pr__nfet_01v8_lvt_PZT9H9_0
-timestamp 1606079819
-transform 1 0 2051 0 1 -371
-box -263 -265 263 265
-use sky130_fd_pr__nfet_01v8_lvt_PZT9H9  sky130_fd_pr__nfet_01v8_lvt_PZT9H9_1
-timestamp 1606079819
-transform 1 0 1453 0 1 -377
-box -263 -265 263 265
-use sky130_fd_pr__nfet_01v8_lvt_F9NR5A  sky130_fd_pr__nfet_01v8_lvt_F9NR5A_0
-timestamp 1606079819
-transform 0 1 2542 -1 0 -1106
-box -396 -710 396 710
 use sky130_fd_pr__nfet_01v8_lvt_F9NR5A  sky130_fd_pr__nfet_01v8_lvt_F9NR5A_1
 timestamp 1606079819
 transform 0 1 976 -1 0 -1120
 box -396 -710 396 710
+use sky130_fd_pr__nfet_01v8_lvt_F9NR5A  sky130_fd_pr__nfet_01v8_lvt_F9NR5A_0
+timestamp 1606079819
+transform 0 1 2542 -1 0 -1106
+box -396 -710 396 710
+use sky130_fd_pr__nfet_01v8_lvt_PZT9H9  sky130_fd_pr__nfet_01v8_lvt_PZT9H9_1
+timestamp 1606079819
+transform 1 0 1453 0 1 -377
+box -263 -265 263 265
+use sky130_fd_pr__nfet_01v8_lvt_PZT9H9  sky130_fd_pr__nfet_01v8_lvt_PZT9H9_0
+timestamp 1606079819
+transform 1 0 2051 0 1 -371
+box -263 -265 263 265
+use sky130_fd_pr__res_xhigh_po_0p35_RRCNTY  sky130_fd_pr__res_xhigh_po_0p35_RRCNTY_1
+timestamp 1606013492
+transform 1 0 2828 0 1 850
+box -678 -908 678 908
+use sky130_fd_pr__res_xhigh_po_0p35_RRCNTY  sky130_fd_pr__res_xhigh_po_0p35_RRCNTY_0
+timestamp 1606013492
+transform 1 0 625 0 1 855
+box -678 -908 678 908
 << labels >>
 rlabel metal1 1676 1966 1770 2038 1 Vdd
 port 1 n
